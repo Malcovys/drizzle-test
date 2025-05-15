@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+# React Native Drizzle ORM with Expo SQLite
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project demonstrates the integration of [Drizzle ORM](https://orm.drizzle.team/) with [Expo SQLite](https://docs.expo.dev/versions/latest/sdk/sqlite/) in a React Native application. It includes examples of database schema definitions, migrations, and interactions with SQLite.
+
+## Features
+
+- **Drizzle ORM**: A lightweight and type-safe ORM for managing SQLite databases.
+- **Expo SQLite**: SQLite integration for React Native using Expo.
+- **Database Migrations**: Manage database schema changes with Drizzle's migration tools.
 
 ## Get started
 
-1. Install dependencies
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Start the app:
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Open the app in one of the following environments:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
+   - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+   - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+   - [Expo Go](https://expo.dev/go)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
+- **`db/schema.ts`**: Defines the database schema, including tables for users, orders, deliveries, and restaurants.
+- **`db/dbInstance.ts`**: Handles database initialization and migrations.
+- **`app/`**: Contains the main application code, including components and screens.
 
-When you're ready, run:
+## Database Schema
 
-```bash
-npm run reset-project
-```
+The project includes the following tables:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- **Users**: Stores user information (e.g., name, age, email).
+- **Orders**: Tracks orders placed by users, including product details and pricing.
+- **Deliveries**: Manages delivery information, such as address, status, and delivery date.
+- **Restaurants**: Stores restaurant details, including name, address, and contact information.
 
-## Learn more
+## Running Migrations
 
-To learn more about developing your project with Expo, look at the following resources:
+Migrations are handled automatically when the app starts. The `runMigrations` function ensures that the database schema is up-to-date. If the migration table does not exist, it will be created automatically.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Development Notes
 
-## Join the community
+- You can start developing by editing the files inside the **app** directory.
+- This project uses [file-based routing](https://docs.expo.dev/router/introduction) for navigation.
 
-Join our community of developers creating universal apps.
+## Learn More
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+To learn more about the tools and libraries used in this project, check out the following resources:
+
+- [Drizzle ORM Documentation](https://orm.drizzle.team/)
+- [Expo SQLite Documentation](https://docs.expo.dev/versions/latest/sdk/sqlite/)
+- [Expo Documentation](https://docs.expo.dev/)
+
+## Join the Community
+
+Join the community of developers working with Expo and Drizzle ORM:
+
+- [Expo on GitHub](https://github.com/expo/expo)
+- [Drizzle ORM on GitHub](https://github.com/drizzle-team/drizzle-orm)
+- [Expo Discord Community](https://chat.expo.dev)
